@@ -19,3 +19,8 @@ mt.__newindex = newcclosure(function(tbl, idx, new)
 
     return oldNewIndex(tbl, idx, new)
 end)
+
+setreadonly(mt, true)
+pcall(function()
+getscriptclosure(game:GetService("ReplicatedFirst"):WaitForChild("ItemSpawn"))()
+end)
