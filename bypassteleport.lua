@@ -1,4 +1,7 @@
-hookmetamethod(
+spawn(function()
+local old
+old =
+    hookmetamethod(
     game,
     "__namecall",
     function(self, ...)
@@ -10,3 +13,4 @@ hookmetamethod(
         return old(self, ...)
     end
 )
+end)
